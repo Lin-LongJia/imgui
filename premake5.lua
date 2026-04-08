@@ -11,12 +11,12 @@ files
     "imgui.h",
     "imgui.cpp",
     "imgui_draw.cpp",
+    "imgui_demo.cpp",
     "imgui_internal.h",
     "imgui_widgets.cpp",
     "imstb_rectpack.h",
     "imstb_textedit.h",
-    "imstb_truetype.h",
-    "imgui_demo.cpp",
+    "imstb_truetype.h"
 }
 
 filter "system:window"
@@ -25,4 +25,4 @@ cppdialect "C++17"
 staticruntime "On"
 
 filter { "system:window", "configurations:Release" }
-buildoptions "/MT"
+buildoptions "/MD"
