@@ -24,5 +24,11 @@ systemversion "latest"
 cppdialect "C++17"
 staticruntime "On"
 
+filter { "system:window", "configurations:Debug" }
+buildoptions "/MDd"
+
 filter { "system:window", "configurations:Release" }
 buildoptions "/MT"
+
+filter { "system:window", "configurations:Dist" }
+buildoptions "/MD"
