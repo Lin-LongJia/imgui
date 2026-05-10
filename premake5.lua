@@ -1,6 +1,8 @@
 project "ImGui"
 kind "StaticLib"
 language "C++"
+cppdialect "C++17"
+staticruntime "On"
 
 targetdir("bin/" .. outputdir .. "/%{prj.name}")
 objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -22,14 +24,11 @@ files
 
 filter "system:window"
 systemversion "latest"
-cppdialect "C++17"
-staticruntime "On"
 
-filter { "system:window", "configurations:Debug" }
-buildoptions "/MDd"
+filter "configurations:Debug"
+runtime "Debug"
+symbols "on"
 
-filter { "system:window", "configurations:Release" }
-buildoptions "/MT"
-
-filter { "system:window", "configurations:Dist" }
-buildoptions "/MD"
+filter "configurations:Debug"
+runtime "Debug"
+symbols "on"
